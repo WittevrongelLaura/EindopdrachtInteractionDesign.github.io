@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>The Movie DB</title>
+    <meta name="description" content="This is a website where you can search for movies and series and get their information." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="msapplication-TileColor" content="#cce7ff" />
+    <meta name="theme-color" content="#cce7ff" />
+    <link rel="icon" href="icons/favicon.svg">
+    <!-- credits icon: https://www.freepik.com/free-icon/tv_793291.htm -->
+    <link rel="manifest" href="site.webmanifest" />
+    <!-- <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0f3557"> -->
+
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/screen.css" />
+
+    <script src="./script/app.js"></script>
+  </head>
+  <body>
+    <div class="o-container u-max-width-xlg">
+      <div class="c-app">
+        <div class="o-row">
+          <div class="o-container">
+            <header class="c-header">
+              <h1>Welcome to the Movies & Series Database!</h1>
+            </header>
+            <div class="o-section">
+              <div class="o-layout c-button">
+                <div class="c-button__movies js-divmovies">
+                  <input class="o-hide-accessible c-button__toggle js-radiomovies" id="movies" type="radio" name="togglebutton" value="Movies" checked/>
+                  <label class="o-button-reset c-button__label  c-button__label--activated js-btntogglemovies" for="movies">Movies</label>
+                
+                </div>
+                <div class="c-button__series js-divseries">
+                  <input class="o-hide-accessible c-button__toggle js-radioseries" id="series" type="radio" name="togglebutton" value="Series" />
+                  <label class="o-button-reset c-button__label c-button__label--notactivated js-btntoggleseries" for="series">Series</label>
+              
+                </div>
+                </div>
+            </div>
+            <div class="c-page js-page">
+              <div class="o-section">
+                <div class="o-layout c-input">
+                  <label class="c-input__search--label" for="search">Search for any movie.<span class="u-hide js-inputmessage c-input__search--span">Specify your searchterm.</span></label>
+                  <input class="js-searchinput c-input__search" type="text" name="searchinput" id="searchinput" placeholder="e.g. No Time To Die" />
+                  <!-- <button class="js-btnsearch" type="submit">Search</button> -->
+                </div>
+              </div>
+              <div class="o-section">
+              <div class="c-loader js-loader u-hide">
+                <div class="c-loader__circle"></div>
+                <div class="c-loader__message js-loadermessage">Loading random movies ...</div>
+              </div>
+              <div class="c-message js-resultsmessage u-hide">
+                <label class="c-message--message">No results found.</label>
+              </div>
+                <div class="c-cards js-cards">
+                  <div class="c-card">
+                    <div class="c-card__content">
+                      <div class="c-card__poster"><img class="c-card__poster--image" src="https://m.media-amazon.com/images/M/MV5BMTM3NTg2NDQzOF5BMl5BanBnXkFtZTcwNjc2NzQzOQ@@._V1_SX300.jpg" alt="Movie/Serie poster" /></div>
+                      <label class="c-card__title"><h1 class="c-card__title--title" for="title" name="title">Fast & Furious 6</h1></label>
+                        
+                      <div class="c-card__info">
+                        <label class="c-card__year" for="year" name="year">Year: 2013</label>
+                        <div class="c-card__details c-card__details--imdbrating">
+                          <label for="rating" name="rating" class="c-card__rating">IMDB rating</label>
+                    
+                          <svg class="c-card__details--star js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </div>
+                        <div class="c-card__details--myrating">
+                          
+                        <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
+                        <div class="c-card__myrating">
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar1" type="checkbox" id="input1" />
+                        <label class="c-label c-card__detailslabel" for="mystar1">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar2" type="checkbox" id="input2" />
+                        <label class="c-label c-card__detailslabel" for="mystar2">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar3" type="checkbox" id="input3" />
+                          <label class="c-label c-card__detailslabel" for="mystar3">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                          <input class="o-hide-accessible c-card__detailsstar js-mystar4" type="checkbox" id="input4" />
+                          <label class="c-label c-card__detailslabel" for="mystar4">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                          <input class="o-hide-accessible c-card__detailsstar js-mystar5" type="checkbox" id="input5" />
+                          <label class="c-label c-card__detailslabel" for="mystar5">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        </div>
+                      </div>
+
+                        <label for="runtime" name="runtime" class="c-card__runtime">Runtime: 130min</label>
+                      </div>
+
+                      <div class="c-card__moredetails">
+                        <label for="actors" name="actors" class="c-card__actors">Actors: Vin Diesel, Paul Walker, Dwayne Johnson, Vin Diesel, Paul Walker, Dwayne Johnson</label>
+                        <label for="plot" name="plot" class="c-card__plot">Since Dom (Diesel) and Brian's (Walker) Rio heist toppled a kingpin's empire and left their crew with $100 million, our heroes have scattered across the globe. But their inability to return home and living forever on the lam have left their lives incomplete. Meanwhile, Hobbs (Johnson) has been tracking an organization of lethally skilled mercenary drivers across 12 countries, whose mastermind (Evans) is aided by a ruthless second-in-command revealed to be the love Dom thought was dead, Letty (Rodriguez). The only way to stop the criminal outfit is to outmatch them at street level, so Hobbs asks Dom to assemble his elite team in London. Payment? Full pardons for all of them so they can return home and make their families whole again.</label>
+                       
+                      </div>
+
+                      <div class="c-card__timeline">
+                        <div class="c-card__timeline--labels js-timeline js-timeline">
+                          <label class="c-card__timeline--0">0</label>
+                          <label class="c-card__timeline--1">1</label>
+                          <label class="c-card__timeline--2">2</label>
+                          <label class="c-card__timeline--3">3</label>
+                          <label class="c-card__timeline--4">4</label>
+                        </div>
+
+                        <div class="c-card__timeline--line">
+                          <span class="c-card__timelinespan js-timeline"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="c-card">
+                    <div class="c-card__content">
+                      <div class="c-card__poster"><img class="c-card__poster--image" src="https://m.media-amazon.com/images/M/MV5BOGUxOWQ4MzAtMmJjYS00M2U5LWEwZTAtYTc1YmZhNjg2NDRlXkEyXkFqcGdeQXVyMTYzMDM0NTU@._V1_SX300.jpg" alt="Movie/Serie poster" /></div>
+                      <label class="c-card__title"><h1 class="c-card__title--title" for="title" name="title">The Fresh Prince of Bel-Air</h1></label>
+                        
+                      <div class="c-card__info">
+                        <label class="c-card__year" for="year" name="year">Year: 1990–1996</label>
+                        <div class="c-card__details c-card__details--imdbrating">
+                          <label for="rating" name="rating" class="c-card__rating">IMDB rating</label>
+                    
+                          <svg class="c-card__details--star js-imdbstar1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                          <svg class="c-card__details--nostar js-imdbstar5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </div>
+                        <div class="c-card__details--myrating">
+                          
+                        <label for="rating" name="rating" class="c-card__rating js-rating">Your rating</label>
+                        <div class="c-card__myrating">
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar1" type="checkbox" id="input1" />
+                        <label class="c-label c-card__detailslabel" for="mystar1">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar2" type="checkbox" id="input2" />
+                        <label class="c-label c-card__detailslabel" for="mystar2">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon2" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        <input class="o-hide-accessible c-card__detailsstar js-mystar3" type="checkbox" id="input3" />
+                          <label class="c-label c-card__detailslabel" for="mystar3">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon3" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                          <input class="o-hide-accessible c-card__detailsstar js-mystar4" type="checkbox" id="input4" />
+                          <label class="c-label c-card__detailslabel" for="mystar4">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon4" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                          <input class="o-hide-accessible c-card__detailsstar js-mystar5" type="checkbox" id="input5" />
+                          <label class="c-label c-card__detailslabel" for="mystar5">
+                          <svg class="c-card__details--icon c-card__details--nostar js-mystar" id="icon5" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="none">
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                          </svg>
+                        </label>
+                        </div>
+                      </div>
+
+                        <label for="runtime" name="runtime" class="c-card__runtime">Runtime: 22 min</label>
+                      </div>
+
+                      <div class="c-card__moredetails">
+                        <label for="actors" name="actors" class="c-card__actors">Actors: Will Smith, James Avery, Alfonso Ribeiro</label>
+                        <label for="plot" name="plot" class="c-card__plot">In this popular African-American sitcom, Will Smith (played by Will Smith in his first acting gig) is a street-smart teenager from West Philadelphia, who is sent to live with his wealthy relatives at their Bel-Air mansion in Los Angeles, California by his mother after getting into a fight with some thugs whilst playing basketball. His relatives include Philip Banks (played by James Avery), Will's strict and gruff uncle, who is a successful lawyer (later Judge) and Vivian Banks (played by Janet Hubert and later by Daphne Reid), Will's no-nonsense, forthright, and career-minded aunt who is a University Professor. Other members of the Banks family include Carlton Banks (played by Alfonso Ribeiro), Will's preppy and arrogant cousin, Hilary Banks (played by Karyn Parsons), Will's attractive but dull-witted, eldest cousin, Ashley Banks (played by Tatyana Ali), Will's youngest cousin who often looks u to Will, and Geoffrey, the family's cynical Butler. Will's working class background ends up clashing in various humorous ways with the upper class world of the Banks and frequently got him or other members of the family into trouble as well.</label>
+                       
+                      </div>
+
+                      <div class="c-card__timeline">
+                        <div class="c-card__timeline--labels js-timeline">
+                          <label class="c-card__timeline--0">0</label>
+                          <label class="c-card__timeline--1">0.5</label>
+                          <label class="c-card__timeline--2">1</label>
+                          <label class="c-card__timeline--3">1.5</label>
+                        </div>
+
+                        <div class="c-card__timeline--line">
+                          <span class="c-card__timelinespan js-timeline"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

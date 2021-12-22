@@ -1,0 +1,14 @@
+{
+    "name": "Eindopdracht OMDB",
+    "short_name": "OMDB",
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "180x180",
+            "type": ""
+        }
+    ],
+    "theme_color": "#066baa",
+    "background_color": "#066baa",
+    "display": "standalone"
+}
